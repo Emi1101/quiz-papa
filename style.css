@@ -1,0 +1,80 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; } 
+body { margin: 0; background: #0b0f14; color: #e9eef5; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 18px; } /* Hauptcontainer */
+
+/* Kopfbereich: Titel & Punkte */
+.top { 
+    display: flex; /* Elemente nebeneinander */
+    justify-content: space-between; /* links Titel, rechts Punkte */
+    align-items: baseline; 
+    gap: 12px; 
+    flex-wrap: wrap; 
+}
+
+/* HUD: Frage */
+.hud { 
+    display: flex; /* alles in einer Reihe */
+    gap: 16px; 
+    opacity: .9; /* minimal „zurückgenommen“, nicht so dominant */
+}
+
+/* Quiz-Karte */
+.card {
+  margin-top: 14px; /* Abstand zum Header */
+  background: #121924;
+  border: 1px solid #1f2a3a; /* Rahmen */
+  border-radius: 16px; /* runde Ecken */
+  overflow: hidden; /* Alles, was über die Kanten geht → abschneiden */
+}
+
+#photo {
+  width: 100%;
+  max-width: 320px;   /* kleiner */
+  aspect-ratio: 1 / 1;   /* Quadrat */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;     /* zentriert das Quadrat */
+  background: #0f1520; /* falls Bild noch lädt */
+}
+
+.content { padding: 16px; } /* Abstand innerhalb der Karte (Text & Buttons) */
+
+/* Überschriften */
+h1 { margin: 0; font-size: 22px; }
+h2 { margin: 0 0 12px; font-size: 18px; }
+
+/* Antworten */
+.answers { display: grid; gap: 10px; }
+.answer {
+  width: 100%;
+  text-align: left;
+  padding: 12px 12px; /* Klickfläche */
+  border-radius: 12px;
+  border: 1px solid #223049;
+  background: #0f1520;
+  color: #e9eef5;
+  cursor: pointer; /* klickbar */
+  font-weight: 600;
+}
+.answer:hover { filter: brightness(1.05); } /* Hover: minimal heller */
+.answer:disabled { cursor: not-allowed; opacity: .9; } /* Disabled: Maus zeigt „geht nicht“ + leicht ausgegraut */
+
+.answer.correct { border-color: #2e8b57; }
+.answer.wrong { border-color: #b23b3b; }
+
+.feedback { min-height: 24px; margin: 12px 0 0; opacity: .95; }
+
+.actions { display: flex; gap: 10px; margin-top: 12px; }
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  background: #2a64ff;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:disabled { opacity: .6; cursor: not-allowed; }
+.secondary { background: #2a364a; }
+
+.hidden { display: none; }

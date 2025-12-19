@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+
+<!-- Infos über die Seite -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Seite passt sich an die Bildschirmbreite an -->
+  <title>Quiz-Papa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- Im Browserfenster sichtbar -->
+<body>
+  <main class="wrap">
+    <header class="top">
+      <h1>Quiz für Papa 🎂</h1>
+
+      <div class="hud">
+        <span>Frage: <b id="qIndex">1</b>/<b id="qTotal">0</b></span>
+        <span>Punkte: <b id="score">0</b></span>
+      </div>
+      
+    </header>
+
+    <section class="card">
+      <img id="photo" alt="Quiz-Bild" />
+      <div class="content">
+        <h2 id="question">Frage …</h2>
+        <div id="answers" class="answers"></div>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+
+        <div class="actions">
+          <button id="nextBtn" disabled>Weiter</button>
+          <button id="restartBtn" class="secondary hidden">Nochmal spielen</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
